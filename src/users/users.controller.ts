@@ -10,11 +10,9 @@ import {
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { User } from 'src/common/decorators/user.decorator';
 import { UserDto } from 'src/common/dtos/user.dto';
-import { UndefinedNullInterceptor } from 'src/common/interceptors/undefined.null.interceptor';
 import { JoinRequestDto } from './dtos/join.request.dto';
 import { UsersService } from './users.service';
 
-@UseInterceptors(UndefinedNullInterceptor)
 @ApiTags('USER')
 @Controller('api/users')
 export class UsersController {
