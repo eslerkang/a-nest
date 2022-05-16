@@ -1,5 +1,6 @@
 import { Body, Controller, Get, Post, Req, Res } from '@nestjs/common';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { User } from 'src/common/decorators/user.decorator';
 import { UserDto } from 'src/common/dtos/user.dto';
 import { JoinRequestDto } from './dtos/join.request.dto';
 import { UsersService } from './users.service';
@@ -22,8 +23,8 @@ export class UsersController {
     summary: '내 정보 조회',
   })
   @Get()
-  getUsers(@Req() req) {
-    return req.user;
+  getUsers(@User() user) {
+    return user;
   }
 
   @ApiOperation({
