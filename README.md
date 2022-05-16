@@ -61,7 +61,7 @@ $ yarn run test:cov
 ## API Document
 ```
 API Document created by Swagger
-`{host}:{port}/api`
+check out '{host}:{port}/api'
 ```
 
 ## Support
