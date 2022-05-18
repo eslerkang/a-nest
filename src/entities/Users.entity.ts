@@ -10,13 +10,13 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import { ChannelChats } from './ChannelChats';
-import { ChannelMembers } from './ChannelMembers';
-import { Channels } from './Channels';
-import { DMs } from './DMs';
-import { Mentions } from './Mentions';
-import { WorkspaceMembers } from './WorkspaceMembers';
-import { Workspaces } from './Workspaces';
+import { ChannelChats } from './ChannelChats.entity';
+import { ChannelMembers } from './ChannelMembers.entity';
+import { Channels } from './Channels.entity';
+import { DMs } from './DMs.entity';
+import { Mentions } from './Mentions.entity';
+import { WorkspaceMembers } from './WorkspaceMembers.entity';
+import { Workspaces } from './Workspaces.entity';
 
 @Index('email', ['email'], { unique: true })
 @Entity({ schema: 'sleact', name: 'users' })

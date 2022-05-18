@@ -5,4 +5,8 @@ export class UsersService {
   postUsers(email: string, nickname: string, password: string) {
     return 'hi';
   }
+
+  getUser() {
+    return 'hi';
+  }
 }

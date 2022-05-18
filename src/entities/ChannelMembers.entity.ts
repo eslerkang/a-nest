@@ -7,8 +7,8 @@ import {
   ManyToOne,
   UpdateDateColumn,
 } from 'typeorm';
-import { Channels } from './Channels';
-import { Users } from './Users';
+import { Channels } from './Channels.entity';
+import { Users } from './Users.entity';
 
 @Index('UserId', ['UserId'], {})
 @Entity({ schema: 'sleact', name: 'channelmembers' })
