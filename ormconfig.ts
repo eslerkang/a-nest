@@ -2,7 +2,7 @@ import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 import config from 'config';
 
 const DB_CONFIG = config.get('db');
-const ormconfig: TypeOrmModuleOptions = {
+const ormconfig = {
   type: 'mysql',
   host: DB_CONFIG.host,
   port: 3306,
@@ -13,6 +13,10 @@ const ormconfig: TypeOrmModuleOptions = {
   synchronize: false,
   logging: true,
   keepConnectionAlive: true,
+  charset: 'utf8mb4',
+  migrations: ['src/migrations/*.ts'],
+  migrationsTableName: 'migrations',
+  cli: { migrationsDir: 'src/migrations' },
 };
 
-export default ormconfig;
+export default ormconfig as TypeOrmModuleOptions;
