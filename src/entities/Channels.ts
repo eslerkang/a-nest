@@ -10,10 +10,10 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import { ChannelChats } from './ChannelChats.entity';
-import { ChannelMembers } from './ChannelMembers.entity';
-import { Users } from './Users.entity';
-import { Workspaces } from './Workspaces.entity';
+import { ChannelChats } from './ChannelChats';
+import { ChannelMembers } from './ChannelMembers';
+import { Users } from './Users';
+import { Workspaces } from './Workspaces';
 
 @Index('WorkspaceId', ['WorkspaceId'], {})
 @Entity({ schema: 'sleact' })
