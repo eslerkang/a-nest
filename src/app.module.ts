@@ -12,22 +12,6 @@ import ormconfig from 'ormconfig';
 @Module({
   imports: [
     TypeOrmModule.forRoot(ormconfig),
-    // TypeOrmModule.forRootAsync({
-    //   inject: [ConfigService],
-    //   useFactory: async (configService) =>
-    //     ({
-    //       type: 'mysql',
-    //       host: 'localhost',
-    //       port: 3306,
-    //       username: configService.get('DB_USERNAME'),
-    //       password: configService.get('DB_PASSWORD'),
-    //       database: configService.get('DB_DATABASE'),
-    //       entities: [__dirname + '/entities/*.entity.{js,ts}'],
-    //       synchronize: false,
-    //       logging: true,
-    //       keepConnectionAlive: true,
-    //     }),
-    // }),
     UsersModule,
     WorkspacesModule,
     ChannelsModule,

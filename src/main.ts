@@ -3,6 +3,8 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 import { UndefinedNullInterceptor } from './common/interceptors/undefined.null.interceptor';
 import config from 'config';
+import { HttpExceptionFilter } from './common/filters/httpException.filter';
+import { ValidationPipe } from '@nestjs/common';
 
 const SERVER_CONFIG = config.get('server');
 
@@ -20,6 +22,8 @@ async function bootstrap() {
   SwaggerModule.setup('api', app, swaggerDocument);
 
   app.useGlobalInterceptors(new UndefinedNullInterceptor());
+  app.useGlobalPipes(new ValidationPipe());
+  app.useGlobalFilters(new HttpExceptionFilter());
 
   await app.listen(port);
 
